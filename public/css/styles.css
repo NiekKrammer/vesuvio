@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100dvh;
+    overflow-x: clip;
+    display: flex;
+    flex-direction: column;
+}
+
+a,
+button {
+    text-decoration: none;
+}
+
+a:hover, button:hover, .cart-icon:hover {
+    opacity: 0.9;
+}
+
+/* -- navbar -- */
+nav {
+    width: 100dvw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 6%;
+    background-color: rgba(51, 51, 51, 0.96);
+}
+
+nav .nav-logo {
+    color: #0ed2c0;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+nav button {
+    background-color: transparent;
+    border: none;
+}
+
+nav .username {
+    color: #0fc7b7;
+    font-weight: 500;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.counter {
+    position: absolute;
+    font-weight: 400;
+    right: -16px;
+    top: -14px;
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 20px 9%;
+    }
+}
+
+/* -- herosection - */
+.herosection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 32px;
+    text-align: center;
+    max-width: 1100px;
+    height: calc(100vh - 86px);
+}
+
+.herosection img {
+    width: 400px;
+}
+
+.herosection h1 {
+    font-size: 32px;
+    font-weight: 650;
+    word-spacing: 3px;
+    letter-spacing: 3px;
+    margin: 10px 0;
+}
+
+.herosection a {
+    color: #312f2f;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .herosection img {
+        width: 300px;
+    }
+}
+
+/* -- producten - */
+.producten {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto 30px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    border: 1px solid rgba(17, 17, 17, 0.7);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.product h3 {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.product button {
+    background-color: #31d2c2;
+    border: none;
+    color: #111;
+    font-weight: 500;
+    padding: 7px 22px;
+    border-radius: 6px;
+    align-self: flex-start;
+}
+

@@ -37,6 +37,9 @@ class Products
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $total_revenue = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $quantity_selled = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -122,6 +125,18 @@ class Products
     public function setTotalRevenue(?string $total_revenue): static
     {
         $this->total_revenue = $total_revenue;
+
+        return $this;
+    }
+
+    public function getQuantitySelled(): ?string
+    {
+        return $this->quantity_selled;
+    }
+
+    public function setQuantitySelled(?string $quantity_selled): static
+    {
+        $this->quantity_selled = $quantity_selled;
 
         return $this;
     }

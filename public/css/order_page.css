@@ -44,9 +44,6 @@
 
 @media only screen and (max-width: 800px) {
     .order_form {
-        width: 90%;
-    }
-    .order_page hr {
-        width: 90%;
+        width: 93%;
     }
 }

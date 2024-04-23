@@ -29,6 +29,7 @@ class OrderCrudController extends AbstractCrudController
             yield Field::new('straatnaam', 'straatnaam'),
             yield Field::new('date', 'afspraak Datum'),
             yield Field::new('ordered_at', 'besteld op'),
+            yield Field::new('status', 'status'),
             yield AssociationField::new('username', 'gebruikersnaam')->formatValue(function ($value, $entity) {
                 return $value ? $value->getUsername() : '';
             }),

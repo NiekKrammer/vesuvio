@@ -82,6 +82,7 @@ class OrderController extends AbstractController
             $sellPrice = $product->getSellPrice();
             $purchasePrice = $product->getPurchasePrice();
             $product->setRevenue($sellPrice - $purchasePrice);
+            // nog aantal verkocht erbij toevoegen
 
             $product->setQuantity($product->getQuantity() - $itemQuantity);
 

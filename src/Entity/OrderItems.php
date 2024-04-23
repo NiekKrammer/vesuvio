@@ -24,6 +24,10 @@ class OrderItems
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
     private ?string $price = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $packed = null;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -61,6 +65,18 @@ class OrderItems
     public function setPrice(string $price): static
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    public function isPacked(): ?bool
+    {
+        return $this->packed;
+    }
+
+    public function setPacked(?bool $packed): static
+    {
+        $this->packed = $packed;
 
         return $this;
     }

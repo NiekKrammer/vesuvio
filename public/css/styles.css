@@ -39,7 +39,7 @@ nav {
 }
 
 nav .nav-logo {
-    color: #0ed2c0;
+    color: #0fc7b7;
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -103,8 +103,17 @@ nav .username {
 }
 
 @media (max-width: 600px) {
+    .herosection {
+        height: calc(100vh - 76px);
+    }
     .herosection img {
         width: 300px;
+    }
+}
+
+@media (max-width: 350px) {
+    .herosection img {
+        width: 250px;
     }
 }
 
@@ -128,7 +137,7 @@ nav .username {
     flex-direction: column;
     justify-content: space-between;
     width: 300px;
-    border: 1px solid rgba(17, 17, 17, 0.7);
+    border: 1px solid rgba(37, 35, 35, 0.6);
     padding: 20px;
     border-radius: 6px;
 }

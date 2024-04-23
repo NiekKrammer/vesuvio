@@ -19,6 +19,7 @@ class OrderItemsCrudController extends AbstractCrudController
             AssociationField::new('order_item_id', 'bestellingsnummer'),
             Field::new('item', 'items'),
             Field::new('price', 'totale prijs'),
+            Field::new('packed', 'status'),
         ];
     }
 }

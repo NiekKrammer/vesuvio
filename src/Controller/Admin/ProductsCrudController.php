@@ -27,6 +27,7 @@ class ProductsCrudController extends AbstractCrudController
         yield Field::new('purchase_price')->setLabel('aankoopprijs');
         yield Field::new('sell_price')->setLabel('verkoopprijs');
         yield Field::new('quantity')->setLabel('op voorraad');
+        yield Field::new('quantity_selled')->setLabel('aantal verkocht');
         yield Field::new('revenue')->setLabel('omzet');
         yield Field::new('total_revenue')->setLabel('totaal omzet maand');
 

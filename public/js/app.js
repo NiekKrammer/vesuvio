@@ -135,7 +135,7 @@ function increaseButton() {
 function displayOrderList() {
     cart.forEach(item => {
         orderList.innerHTML += `
-            <div class="order">
+            <div class="added_order">
                 <p style="font-size: 18px; font-weight: 500;">${item.name}</p>
                 <p style="color: rgba(51,49,49,0.95);">Aantal: ${item.quantity}</p>
                 <p style="color: #333131F2;">Prijs: €${(item.price * item.quantity).toFixed(2)}</p>

@@ -22,14 +22,20 @@ class Products
     #[ORM\Column]
     public ?bool $available = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $info = null;
-
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2, nullable: true)]
     private ?string $purchase_price = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
     private ?string $sell_price = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $quantity = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $revenue = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $total_revenue = null;
 
     public function getId(): ?int
     {
@@ -56,18 +62,6 @@ class Products
     public function setAvailable(bool $available): static
     {
         $this->available = $available;
-
-        return $this;
-    }
-
-    public function getInfo(): ?string
-    {
-        return $this->info;
-    }
-
-    public function setInfo(?string $info): static
-    {
-        $this->info = $info;
 
         return $this;
     }
@@ -104,6 +98,30 @@ class Products
     public function setSellPrice(string $sell_price): static
     {
         $this->sell_price = $sell_price;
+
+        return $this;
+    }
+
+    public function getRevenue(): ?string
+    {
+        return $this->revenue;
+    }
+
+    public function setRevenue(?string $revenue): static
+    {
+        $this->revenue = $revenue;
+
+        return $this;
+    }
+
+    public function getTotalRevenue(): ?string
+    {
+        return $this->total_revenue;
+    }
+
+    public function setTotalRevenue(?string $total_revenue): static
+    {
+        $this->total_revenue = $total_revenue;
 
         return $this;
     }

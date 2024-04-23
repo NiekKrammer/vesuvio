@@ -91,7 +91,7 @@ nav .username {
 
 .herosection h1 {
     font-size: 32px;
-    font-weight: 650;
+    font-weight: 700;
     word-spacing: 3px;
     letter-spacing: 3px;
     margin: 10px 0;
@@ -109,6 +109,10 @@ nav .username {
 }
 
 /* -- producten - */
+#producten h2 {
+    font-weight: 550;
+}
+
 .producten {
     display: flex;
     flex-wrap: wrap;
@@ -116,6 +120,7 @@ nav .username {
     justify-content: center;
     max-width: 1000px;
     margin: 0 auto 30px;
+    padding: 0 20px;
 }
 
 .product {

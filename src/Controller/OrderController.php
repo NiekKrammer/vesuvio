@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\OrderRepository;
+use App\Repository\ProductsRepository;
 use App\Repository\UserRepository;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -20,13 +21,13 @@ class OrderController extends AbstractController
 {
     private EntityManagerInterface $entityManager;
     private OrderRepository $orderRepository;
-    private UserRepository $UserRepository;
+    private ProductsRepository $productsRepository;
 
-    public function __construct(EntityManagerInterface $entityManager, OrderRepository $orderRepository, UserRepository $UserRepository)
+    public function __construct(EntityManagerInterface $entityManager, OrderRepository $orderRepository, ProductsRepository $productsRepository)
     {
         $this->entityManager = $entityManager;
         $this->orderRepository = $orderRepository;
-        $this->UserRepository = $UserRepository;
+        $this->productsRepository = $productsRepository;
     }
 
     #[Route('/bestelling', name: 'app_order')]
@@ -40,7 +41,6 @@ class OrderController extends AbstractController
         $orders = $this->orderRepository->findAll();
 
         // Haal alle gegevens van de ingelogde gebruiker op
-        // $user = $this->UserRepository->findAll();
         $user = $this->getUser();
 
         // Haal de ingelogde gebruiker zijn email op
@@ -77,8 +77,15 @@ class OrderController extends AbstractController
             $itemPrice = $itemData['price'];
             $itemName = $itemData['item'];
 
-            $itemDescription = $itemQuantity . 'x ' . $itemName . ' €' . number_format($itemPrice, 2, '.', ',');
+            $product = $this->productsRepository->findOneBy(['name' => $itemName]);
 
+            $sellPrice = $product->getSellPrice();
+            $purchasePrice = $product->getPurchasePrice();
+            $product->setRevenue($sellPrice - $purchasePrice);
+
+            $product->setQuantity($product->getQuantity() - $itemQuantity);
+
+            $itemDescription = $itemQuantity . 'x ' . $itemName . ' €' . number_format($itemPrice, 2, '.', ',');
             $itemDescriptions[] = $itemDescription;
             $itemTotalPrice = $itemPrice;
             $totalPrice += $itemTotalPrice;

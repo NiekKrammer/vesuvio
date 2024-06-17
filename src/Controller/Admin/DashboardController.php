@@ -35,6 +35,7 @@ class DashboardController extends AbstractDashboardController
             yield MenuItem::linkToCrud('Onderdelen', 'fa-solid fa-screwdriver-wrench', Products::class);
         }
         yield MenuItem::linkToCrud('Gebruikers', 'fa fa-users', User::class);
+        yield MenuItem::linkToCrud('Producten', 'fa-solid fa-screwdriver-wrench', Products::class);
         yield MenuItem::linkToCrud('Bestellingen', 'fa-solid fa-table-list', Order::class);
         yield MenuItem::linkToCrud('Bestelde items', 'fa-solid fa-list-ul', OrderItems::class);
         yield MenuItem::linkToCrud('Personeel', 'fa-solid fa-building-user', Employees::class);
